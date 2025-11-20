@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telefonni tahrirlash</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<h2>Telefonni tahrirlash</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    <input type="text" name="nomi" value="{{ tel.nomi }}" required>
+    <input type="text" name="narxi" value="{{ tel.narxi }}" required>
+    <input type="number" name="soni" value="{{ tel.soni }}" required>
+    <textarea name="malumot" required>{{ tel.malumot }}</textarea>
+    <input type="file" name="rasm">
+    <button>Yangilash</button>
+</form>
+
+</body>
+</html>

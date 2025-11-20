@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telefonlar</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<h2>Assalomu alaykum, {{ nomi }}</h2>
+
+<a class="btn" href="/add-tel">+ Telefon qo‘shish</a>
+<a class="btn danger" href="/logout">Chiqish</a>
+
+<div class="cards">
+    {% for t in tel %}
+    <div class="card">
+        <img src="/uploads/{{ t.rasm }}" width="200">
+        <h3>{{ t.nomi }}</h3>
+        <p>Narxi: {{ t.narxi }}</p>
+        <p>Soni: {{ t.soni }}</p>
+        <p>{{ t.malumot }}</p>
+        <p>Yaratilgan vaqti: {{ t.create_at.strftime('%d-%m-%Y %H:%M') }}</p>
+        <a class="btn" href="/edit-tel/{{ t.id }}">Tahrirlash</a>
+        <a class="btn danger" href="/delete-tel/{{ t.id }}">O‘chirish</a>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
